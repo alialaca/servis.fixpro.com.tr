@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/scripts'
-  ]
+    '@nuxt/scripts',
+    'shadcn-nuxt'
+  ],
+  shadcn: {
+    prefix: '',
+    componentDir: './components/shadcn',
+  }
 })
