@@ -4,15 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/scripts',
-    'shadcn-nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxt/scripts'
   ],
   shadcn: {
     prefix: '',
-    componentDir: './components/ui',
+    componentDir: './components/ui'
   }
 })
