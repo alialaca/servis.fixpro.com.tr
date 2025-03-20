@@ -5,7 +5,7 @@ import {Input} from "~/components/ui/input";
 </script>
 
 <template lang="pug">
-section(class="w-screen h-screen bg-fxsoftblue")
+section#durum-sorgula(class="w-screen h-screen bg-fxsoftblue")
   div.container.mx-auto
     app-navbar
     div

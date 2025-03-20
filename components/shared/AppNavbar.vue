@@ -14,7 +14,7 @@
         svg(class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon")
           path(stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5")
     div(class="hidden lg:flex lg:gap-x-12 text-gray-900")
-      a(href="#") Durum Sorgula
+      a(href="#durum-sorgula") Durum Sorgula
       a(href="#") Kullanım Videoları
       a(href="#") S.S.S.
       a(href="#") İletişim
