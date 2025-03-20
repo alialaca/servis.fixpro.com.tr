@@ -15,6 +15,7 @@
           path(stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5")
     div(class="hidden lg:flex lg:gap-x-12 text-gray-900")
       a(href="#durum-sorgula") Durum Sorgula
+      a(href="#surecimiz") Çalışma Şeklimiz
       a(href="#") Kullanım Videoları
       a(href="#") S.S.S.
       a(href="#") İletişim
