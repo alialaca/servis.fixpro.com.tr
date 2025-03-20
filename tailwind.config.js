@@ -4,12 +4,18 @@ export default {
     content: [],
     theme: {
     	extend: {
+			fontFamily: {
+				dm: ['DM Sans', 'sans-serif'],
+			},
     		borderRadius: {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+				fxblue: '#183F78',
+				fxsoftblue: '#F1F7FF',
+				fxstatusblue: '#2B74DF',
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
