@@ -5,7 +5,8 @@ import AppNavbar from "~/components/shared/AppNavbar.vue";
 
 <template lang="pug">
 section(class="w-screen h-screen bg-fxsoftblue")
-  app-navbar
+  div.container.mx-auto
+    app-navbar
 </template>
 
 <style scoped>
