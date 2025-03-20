@@ -1,5 +1,5 @@
 <template>
-  <div class="font-dm text-[16px]">
+  <div class="font-dm text-[16px] overflow-x-hidden">
     <NuxtPage/>
   </div>
 </template>
