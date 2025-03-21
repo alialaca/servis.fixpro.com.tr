@@ -18,7 +18,7 @@
       a(href="#surecimiz") Çalışma Şeklimiz
       a(href="#videolar") Kullanım Videoları
       a(href="#sikca-sorulan-sorular") S.S.S.
-      a(href="#") İletişim
+      a(href="#iletisim") İletişim
     div(class="hidden lg:flex lg:flex-1 lg:justify-end")
       Button(class="bg-fxblue rounded-sm") +  Yeni Cihaz Kaydı
 </template>s
