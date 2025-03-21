@@ -20,7 +20,7 @@
       a(href="#sikca-sorulan-sorular") S.S.S.
       a(href="#iletisim") İletişim
     div(class="hidden lg:flex lg:flex-1 lg:justify-end")
-      Button(class="bg-fxblue rounded-sm") +  Yeni Cihaz Kaydı
+      NuxtLink(to="/kayit" class="bg-fxblue rounded-sm text-white py-2 px-4") +  Yeni Cihaz Kaydı
 </template>s
 
 <style scoped>

@@ -63,12 +63,12 @@ main.w-screen.h-screen.bg-fwhite.flex
         Label.font-light Arıza Açıklaması
         Textarea(id="name" name="name" type="text")
       div.form-item.flex.flex-items-center.space-x-2.col-span-2
-        Checkbox
+        Checkbox.border-fxblue(class="")
         Label
-          span KVKK aydınlatma metnini
+          span.text-fxblue.font-semibold KVKK aydınlatma metnini
           span.font-light.ml-1 okudum, kabul ediyorum.
       div.form-item.col-span-2.flex.justify-end.gap-2.pt-8
-        Button(variant="outline" ).text-fxblue İptal
+        NuxtLink(to="/" class="border-fxblue border rounded-md px-4 py-1 text-fxblue text-md") İptal
         Button.bg-fxblue.text-white.px-8.py-2.rounded-md Servis Kaydı Oluştur
 
 </template>
