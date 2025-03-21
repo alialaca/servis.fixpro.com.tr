@@ -3,41 +3,35 @@
 import {Card, CardContent, CardHeader, CardTitle} from "~/components/ui/card";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "~/components/ui/accordion";
 
-interface Question {
-  value: number;
-  question: string;
-  answer: string;
-}
-
-const defaultValue = 1
-const contents: Question[] = [
+const defaultValue = '1'
+const contents = [
   {
-    value: 1,
+    value: '1',
     question: "Onarım süreniz yaklaşık olarak kaç gündür?",
     answer: ""
   },
   {
-    value: 2,
+    value: '2',
     question: "Talep formu doldurdum cihazı size nasıl göndereceğim?",
     answer: ""
   },
   {
-    value: 3,
+    value: '3',
     question: "Cihazı kılıfı ve veya bataryası olmadan size gönderebilir miyim?",
     answer: ""
   },
   {
-    value: 4,
+    value: '4',
     question: "Vakit sorunu yaşıyorum cihazı size göndermeden kendim tamir edebilir miyim?",
     answer: ""
   },
   {
-    value: 5,
+    value: '5',
     question: "Tamir sonrası gönderilen kargonun durumunu nasıl öğrenebilirim?",
     answer: ""
   },
   {
-    value: 6,
+    value: '6',
     question: "Web sitesinden detayları ne kadar süreyle görüntüleyebilirim?",
     answer: ""
   },
