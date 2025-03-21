@@ -6,37 +6,43 @@ const statuses = [
     icon: "fe:layer",
     title: "Servis Kaydı Oluşturuldu",
     date: "28.05.2025 - 14:30",
-    description: "Servis kaydınız başarıyla oluşturuldu."
+    description: "Servis kaydınız başarıyla oluşturuldu.",
+    status: "completed"
   },
   {
     icon: "heroicons:cube",
     title: "Cihaz Teslim Alındı",
     date: "30.05.2025 - 10:15",
-    description: "Cihazınız servis merkezimize ulaştı ve kayıt altına alındı"
+    description: "Cihazınız servis merkezimize ulaştı ve kayıt altına alındı",
+    status: "completed"
   },
   {
     icon: "heroicons:wrench-screwdriver",
     title: "Teknik İnceleme ve Onarım",
     date: "04.06.2025 - 09:45",
-    description: "Cihazınız şu anda teknik inceleme ve onarım aşamasındadır."
+    description: "Cihazınız şu anda teknik inceleme ve onarım aşamasındadır.",
+    status: "completed"
   },
   {
     icon: "ic:baseline-payments",
     title: "Ödeme",
-    date: "Bekleniyor",
-    description: ""
+    date: "",
+    description: "",
+    status: "in-progress"
   },
   {
     icon: "ic:baseline-payments",
     title: "Kargolandı",
-    date: "Bekleniyor",
-    description: ""
+    date: "",
+    description: "",
+    status: "pending"
   },
   {
-    icon: 'material-symbols:check-circle-outline-rounded',
-    title: 'Teslim edildi',
-    date: 'Bekleniyor',
-    description: ''
+    icon: "material-symbols:check-circle-outline-rounded",
+    title: "Teslim edildi",
+    date: "",
+    description: '',
+    status: "pending"
   }
 ]
 </script>
