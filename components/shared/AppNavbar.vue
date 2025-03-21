@@ -16,7 +16,7 @@
     div(class="hidden lg:flex lg:gap-x-12 text-gray-900")
       a(href="#durum-sorgula") Durum Sorgula
       a(href="#surecimiz") Çalışma Şeklimiz
-      a(href="#") Kullanım Videoları
+      a(href="#videolar") Kullanım Videoları
       a(href="#") S.S.S.
       a(href="#") İletişim
     div(class="hidden lg:flex lg:flex-1 lg:justify-end")
