@@ -17,7 +17,7 @@
       a(href="#durum-sorgula") Durum Sorgula
       a(href="#surecimiz") Çalışma Şeklimiz
       a(href="#videolar") Kullanım Videoları
-      a(href="#") S.S.S.
+      a(href="#sikca-sorulan-sorular") S.S.S.
       a(href="#") İletişim
     div(class="hidden lg:flex lg:flex-1 lg:justify-end")
       Button(class="bg-fxblue rounded-sm") +  Yeni Cihaz Kaydı
