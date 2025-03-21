@@ -52,7 +52,7 @@ section#sikca-sorulan-sorular(class="w-screen h-screen bg-[url('/images/service.
         CardTitle(class="text-2xl font-bold") Sıkça Sorulan Sorular
       CardContent
         Accordion(type="single" collapsible :default-value="defaultValue")
-          AccordionItem(v-for="(content) in contents" :key="content.value" :value="content.value")
+          AccordionItem(v-for="content in contents" :key="content.value" :value="content.value")
             AccordionTrigger {{ content.question }}
             AccordionContent
               p {{ content.answer }}
