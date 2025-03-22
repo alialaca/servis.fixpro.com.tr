@@ -13,6 +13,7 @@ import {
 } from "~/components/ui/select";
 import {Checkbox} from "~/components/ui/checkbox";
 import StatusTimeline from "~/components/StatusTimeline.vue";
+import {Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow} from "~/components/ui/table";
 const statuses = [
   {
 
@@ -24,7 +25,7 @@ const statuses = [
 main.w-screen.h-screen.bg-fwhite.flex
   div(class="w-4/12 h-screen bg-fxsoftblue grid place-content-center")
     nuxt-img(src="/images/detail.png" alt="register")
-  div(class="w-8/12 h-screen p-10")
+  div(class="w-8/12 h-screen p-10 overflow-y-auto")
     div(class="flex justify-between")
       nuxt-img(src="/logo.png" alt="logo" height="30")
       Button(variant="outline" class="text-fxblue")
@@ -57,6 +58,32 @@ main.w-screen.h-screen.bg-fwhite.flex
       div(class="border-l-[1px] border-dashed border-black pl-8")
         p.text-base.font-bold.underline.mb-4 Servis Durumu
         status-timeline
+      Card.col-span-2.mt-5.shadow-none.border-black
+        CardHeader
+          CardTitle Değiştirilen Parçalar
+        CardContent
+          Table
+            TableHeader
+              TableRow.font-bold
+                TableHead Ürün Kodu
+                TableHead Ürün Adı
+                TableHead.text-right Fiyat (₺)
+                TableHead.text-right Miktar
+                TableHead.text-right Tutar (₺)
+            TableBody
+              TableRow(v-for="i in 5" :key="i" )
+                TableCell 123456
+                TableCell Batarya
+                TableCell.text-right 150
+                TableCell.text-right 1
+                TableCell.text-right 150
+            TableFooter
+              TableRow.font-bold
+                TableCell TOPLAM
+                TableCell
+                TableCell.text-right
+                TableCell.text-right
+                TableCell.text-right 2900
 
 
 </template>
