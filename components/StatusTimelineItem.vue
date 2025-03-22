@@ -18,7 +18,7 @@ div.flex.flex-row.gap-4.pb-4
     )
     Icon(:name="status.icon" class="text-fxblue size-6")
   div(
-    v-if="status.title !== 'Teslim edildi'"
+    v-show="status.title !== 'Teslim edildi'"
     class="border-[.1rem] border-[#EFEFF0] h-8 relative -left-10 top-14"
     :class="{'border-fxstatusblue': status.status === 'completed', 'border-fxstatusblue': status.status === 'completed'}"
     )
