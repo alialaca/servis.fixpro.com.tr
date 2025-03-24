@@ -14,9 +14,80 @@ import {
 import {Checkbox} from "~/components/ui/checkbox";
 import StatusTimeline from "~/components/StatusTimeline.vue";
 import {Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow} from "~/components/ui/table";
+
 const statuses = [
   {
+    icon: "fe:layer",
+    title: "Servis Kaydı Oluşturuldu",
+    date: "28.05.2025 - 14:30",
+    description: "Servis kaydınız başarıyla oluşturuldu.",
+    status: "completed"
+  },
+  {
+    icon: "heroicons:cube",
+    title: "Cihaz Teslim Alındı",
+    date: "30.05.2025 - 10:15",
+    description: "Cihazınız servis merkezimize ulaştı ve kayıt altına alındı",
+    status: "completed"
+  },
+  {
+    icon: "heroicons:wrench-screwdriver",
+    title: "Teknik İnceleme ve Onarım",
+    date: "04.06.2025 - 09:45",
+    description: "Cihazınız şu anda teknik inceleme ve onarım aşamasındadır.",
+    status: "completed"
+  },
+  {
+    icon: "ic:baseline-payments",
+    title: "Ödeme",
+    date: "",
+    description: "",
+    status: "in-progress"
+  },
+  {
+    icon: "ic:baseline-payments",
+    title: "Kargolandı",
+    date: "",
+    description: "",
+    status: "pending"
+  },
+  {
+    icon: "material-symbols:check-circle-outline-rounded",
+    title: "Teslim edildi",
+    date: "",
+    description: '',
+    status: "pending"
+  }
+]
 
+const items = [
+  {
+    urunKodu: "FXYP0051",
+    urunAdi: "FixPro FX165 Cylinder",
+    fiyat: 1000,
+    miktar: 1,
+    tutar: 1000
+  },
+  {
+    urunKodu: "FXYP0039",
+    urunAdi: "FixPro FX165 Piston Assembly",
+    fiyat: 1500,
+    miktar: 1,
+    tutar: 1500
+  },
+  {
+    urunKodu: "FXYP0043",
+    urunAdi: "Ürün Fixpro FX165 0 Ring 70*3,53",
+    fiyat: 250,
+    miktar: 1,
+    tutar: 250
+  },
+  {
+    urunKodu: "FXYP0092",
+    urunAdi: "Fixpro FX165 Ignition Switch Asse",
+    fiyat: 150,
+    miktar: 1,
+    tutar: 150
   }
 ]
 </script>
@@ -57,10 +128,10 @@ main.w-screen.h-screen.bg-fwhite.flex
             p.text-xs.font-light Batarya ısınma problemi çözüldü
       div(class="border-l-[1px] border-dashed border-black pl-8")
         p.text-base.font-bold.underline.mb-4 Servis Durumu
-        status-timeline
+        status-timeline(:statuses="statuses")
       Card.col-span-2.mt-5.shadow-none.border-black
         CardHeader
-          CardTitle Değiştirilen Parçalar
+          CardTitle.text-lg Değiştirilen Parçalar
         CardContent
           Table
             TableHeader
@@ -71,12 +142,12 @@ main.w-screen.h-screen.bg-fwhite.flex
                 TableHead.text-right Miktar
                 TableHead.text-right Tutar (₺)
             TableBody
-              TableRow(v-for="i in 5" :key="i" )
-                TableCell 123456
-                TableCell Batarya
-                TableCell.text-right 150
-                TableCell.text-right 1
-                TableCell.text-right 150
+              TableRow(v-for="(item, index ) in items" :key="item.urunKodu + index" )
+                TableCell {{ item.urunKodu }}
+                TableCell {{ item.urunAdi }}
+                TableCell.text-right {{ item.fiyat }}
+                TableCell.text-right {{ item.miktar }}
+                TableCell.text-right {{ item.tutar }}
             TableFooter
               TableRow.font-bold
                 TableCell TOPLAM
@@ -84,6 +155,10 @@ main.w-screen.h-screen.bg-fwhite.flex
                 TableCell.text-right
                 TableCell.text-right
                 TableCell.text-right 2900
+      div.w-full.mt-4.col-span-2
+        Button.bg-fxblue.float-right
+          Icon(name="ic:baseline-payments")
+          | Ödeme Yap
 
 
 </template>
