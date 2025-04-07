@@ -7,11 +7,11 @@ const process = defineProps<{
 </script>
 
 <template lang="pug">
-div(class="process-item border border-fxblue p-5 rounded-3xl w-96 h-96 flex flex-col items-center justify-center")
-  div(class="bg-fxblue p-3 rounded-full w-16 aspect-square grid place-items-center")
-    Icon(:name="process.icon"  class="text-white size-8")
+div(class="process-item border border-fxblue p-5 rounded-3xl w-96 h-96 flex flex-col items-center justify-center group hover:bg-fxblue hover:text-white hover:shadow-fxblue hover:shadow-lg transition-all duration-300 ease-in-out")
+  div(class="bg-fxblue group-hover:bg-white p-3 rounded-full w-16 aspect-square grid place-items-center")
+    Icon(:name="process.icon"  class="text-white group-hover:text-fxblue size-8")
   p(class="text-2xl font-bold mt-6") {{ process.title }}
-  p(class="text-muted-foreground mt-2 font-light") {{ process.description }}
+  p(class="mt-2 font-light") {{ process.description }}
 </template>
 
 <style scoped>
