@@ -16,6 +16,9 @@ main
   footer-section
 </template>
 
-<style scoped>
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
 </style>
