@@ -23,13 +23,12 @@ const menues = [
 
 <template lang="pug">
   nav(class="fixed w-full transition-all duration-300 z-50" aria-label="Global" ref="el" )
-    div(class="py-8 transition-all duration-300 bg-transparent" :class="{'bg-white shadow-md': scrolled}")
+    div(class="py-4 transition-all duration-300 bg-transparent" :class="{'bg-white shadow-md py-2': scrolled, 'py-8': !scrolled }")
       div(class="container mx-auto flex items-center justify-between")
         div(class="flex lg:flex-1")
           a(href="#" class="-m-1.5 p-1.5")
             span(class="sr-only") FixPro
             nuxt-img(src="/logo.png" class="h-8")
-            pre {{y}} {{isScrolled}}
         div(class="flex lg:hidden")
           button(type="button" class="-m-2.5 inline-flex items-center justify-center rounded-sm p-2.5 text-gray-700")
             span(class="sr-only") Open main menu
