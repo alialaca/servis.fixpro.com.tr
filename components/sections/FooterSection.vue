@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 import Logo from "~/components/shared/Logo.vue";
-import Divider from "~/components/shared/Divider.vue";
 const accounts = [
   { icon: 'mdi:instagram', link: 'https://www.instagram.com/fixpro_tr/'},
   { icon: 'mdi:facebook', link: 'https://www.instagram.com/fixpro_tr/'},
