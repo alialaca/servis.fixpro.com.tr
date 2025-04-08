@@ -26,11 +26,11 @@ const processes: Process[] = [
 </script>
 
 <template lang="pug">
-section#surecimiz.container.mx-auto.text-center.my-20.pb-10
+section#surecimiz.container.mx-auto.text-center.my-20.pb-10(class="max-md:px-5")
   p(class="text-4xl font-bold text-fxblue mt-20") Teknik Servis Sürecimiz
   p(class="text-muted-foreground mt-2 font-light") Cihazınızın onarım sürecini şeffaf bir şekilde takip edebilirsiniz.
   div
-    div(class="flex justify-center items-center gap-10 mt-20")
+    div(class="flex flex-row max-md:flex-col justify-center items-center gap-10 mt-20")
       ProcessCard(v-for="process in processes" :key="process.title" :icon="process.icon" :title="process.title" :description="process.description")
 </template>
 
