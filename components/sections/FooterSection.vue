@@ -21,16 +21,16 @@ const contacts = [
 <template lang="pug">
 section#iletisim(class="w-screen bg-fxblue text-white")
   div.container.mx-auto.pt-16.pb-8
-    footer(class="flex items-start justify-between")
-      div.flex.flex-col.gap-3
-        div.flex.items-end.gap-3
+    footer(class="flex max-md:flex-col items-start justify-between max-md:items-center")
+      div.flex.flex-col.gap-3(class="max-md:order-2 max-md:pt-10")
+        div.flex.items-end.gap-3(class="max-md:mx-auto")
           Logo(variation="white" )
         div(class="bg-white w-full h-[1px]")
         div.flex.justify-between
           LazyIcon(v-for="acount in accounts" :key="acount.link" :name="acount.icon")
-        div.text-xs.mt-10 Copyright © 2025 | FixPro İç ve Dış Ticaret A.Ş
+        div.text-xs.mt-10(class="max-md:mt-2") Copyright © 2025 | FixPro İç ve Dış Tic. A.Ş
 
-      div.contacts.flex.flex-col.gap-2.font-light
+      div.contacts.flex.flex-col.gap-2.font-light(class="max-md:order-1")
         a.flex.items-center(v-for="contact in contacts" :key="contact.text")
           Icon(:name="contact.icon" size="1em")
           p.ml-2 {{contact.text}}
