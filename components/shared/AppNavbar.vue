@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Brand from "~/components/shared/Brand.vue";
+
 const scrolled = ref(false)
 const checkScroll = () => {
   scrolled.value = window.scrollY > 50
@@ -28,7 +30,7 @@ const menues = [
         div(class="flex lg:flex-1")
           a(href="#" class="-m-1.5 p-1.5")
             span(class="sr-only") FixPro
-            nuxt-img(src="/logo.png" class="h-8")
+            Brand
         div(class="flex lg:hidden")
           button(type="button" class="-m-2.5 inline-flex items-center justify-center rounded-sm p-2.5 text-gray-700")
             span(class="sr-only") Open main menu
