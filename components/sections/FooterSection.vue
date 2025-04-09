@@ -26,9 +26,10 @@ section#iletisim(class="w-screen bg-fxblue text-white")
         div.flex.items-end.gap-3(class="max-md:mx-auto")
           Logo(variation="white" )
         div(class="bg-white w-full h-[1px]")
-        div.flex.justify-between
-          LazyIcon(v-for="acount in accounts" :key="acount.link" :name="acount.icon")
-        div.text-xs.mt-10(class="max-md:mt-2") Copyright © 2025 | FixPro İç ve Dış Tic. A.Ş
+        ul.flex.justify-between
+          li(v-for="acount in accounts" :key="acount.link" :href="acount.link" target="_blank" class="text-white hover:text-fxstatusblue transition-colors duration-300 cursor-pointer")
+            LazyIcon(:name="acount.icon")
+        div.text-xs.mt-2 Copyright © 2025 | FixPro İç ve Dış Tic. A.Ş
 
       div.contacts.flex.flex-col.gap-2.font-light(class="max-md:order-1")
         a.flex.items-center(v-for="contact in contacts" :key="contact.text")
