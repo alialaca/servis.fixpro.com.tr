@@ -25,7 +25,7 @@ const menues = [
 
 <template lang="pug">
   nav(class="fixed w-full transition-all duration-300 z-50" aria-label="Global" ref="el" )
-    div(class="py-4 transition-all duration-300 bg-transparent" :class="{'bg-white shadow-md py-2': scrolled, 'py-8': !scrolled }")
+    div(class="py-4 max-md:px-2 transition-all duration-300 bg-transparent" :class="{'bg-white shadow-md py-2': scrolled, 'py-8': !scrolled }")
       div(class="container mx-auto flex items-center justify-between")
         div(class="flex lg:flex-1")
           a(href="#" class="-m-1.5 p-1.5")
