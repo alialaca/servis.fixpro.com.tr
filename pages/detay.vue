@@ -97,14 +97,14 @@ const items = [
 main.w-screen.h-screen.bg-fwhite.flex
   div(class="w-4/12 max-lg:hidden h-screen bg-fxsoftblue grid place-content-center")
     nuxt-img(src="/images/detail.png" alt="register")
-  div(class="w-8/12 h-screen p-10 overflow-y-auto max-lg:w-full max-md:px-4 grid place-content-start max-md:place-content-start")
+  div(class="w-8/12 h-screen p-10 overflow-y-auto max-lg:w-full max-md:px-4 grid place-content-stretch max-md:place-content-start")
     div(class="flex justify-between")
       Brand(variation="normal" )
       Button(variant="outline" class="text-fxblue")
         Icon(name="ic:outline-local-printshop")
         | Yazdır
     div(class="w-full p-8 mt-4 border border-fxblue rounded-xl grid grid-cols-2")
-      div
+      div(class="max-lg:col-span-2")
         p.text-2xl.font-bold Servis Kaydı #TS18675
         p.text-xs.text-gray-500.font-light.mt-1 FixPro FX4566 | 12.05.2021
         div.bilgiler(class="grid grid-cols-2 gap-4 gap-y-8 mt-4")
@@ -127,10 +127,10 @@ main.w-screen.h-screen.bg-fwhite.flex
           div.flex.flex-col.gap-1.col-span-2
             p.text-sm.font-semibold.underline Servis Değerlendirmesi
             p.text-xs.font-light Batarya ısınma problemi çözüldü
-      div(class="border-l-[1px] border-dashed border-black pl-8")
+      div(class="border-l-[1px] border-dashed max-lg:border-t-[1px] max-lg:border-l-0 border-black pl-8 max-lg:pl-0 max-lg:pt-8 max-lg:mt-8 max-lg:col-span-2")
         p.text-base.font-bold.underline.mb-4 Servis Durumu
         status-timeline(:statuses="statuses")
-      Card.col-span-2.mt-5.shadow-none.border-black
+      Card.col-span-2.mt-5.shadow-none.border-black(class="max-lg:col-span-2")
         CardHeader
           CardTitle.text-lg Değiştirilen Parçalar
         CardContent
@@ -138,14 +138,14 @@ main.w-screen.h-screen.bg-fwhite.flex
             TableHeader
               TableRow.font-bold
                 TableHead Ürün Kodu
-                TableHead Ürün Adı
+                TableHead(class="min-w-96" ) Ürün Adı
                 TableHead.text-right Fiyat (₺)
                 TableHead.text-right Miktar
                 TableHead.text-right Tutar (₺)
             TableBody
               TableRow(v-for="(item, index ) in items" :key="item.urunKodu + index" )
                 TableCell {{ item.urunKodu }}
-                TableCell {{ item.urunAdi }}
+                TableCell(class="min-w-96" ) {{ item.urunAdi }}
                 TableCell.text-right {{ item.fiyat }}
                 TableCell.text-right {{ item.miktar }}
                 TableCell.text-right {{ item.tutar }}
