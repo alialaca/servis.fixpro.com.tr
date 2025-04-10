@@ -13,13 +13,13 @@ defineProps<{
 <template lang="pug">
   div.flex.flex-row.gap-4.pb-3
     div(
-      class="border border-[3px] shadow-md border-fxstatusblue rounded-full grid place-content-center size-12 my-2"
+      class="border border-[3px] bg-white z-50 shadow-md border-fxstatusblue rounded-full grid place-content-center size-12 min-w-12 my-2"
       :class="{'border-white': status.status !== 'completed', 'bg-[#EFEFF0]': status.status === 'pending'}"
     )
       Icon(:name="status.icon" class="text-fxblue size-6")
     div(
       v-show="status.title !== 'Teslim edildi'"
-      class="border-[.1rem] border-[#EFEFF0] h-8 relative -left-10 top-14"
+      class="border-[.1rem] border-[#EFEFF0] min-h-8 relative -left-10 top-14"
       :class="{'border-fxstatusblue': status.status === 'completed', 'border-fxstatusblue': status.status === 'completed'}"
     )
     div.text-xs.my-2
