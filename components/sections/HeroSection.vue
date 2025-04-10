@@ -9,7 +9,7 @@ import {Input} from "~/components/ui/input";
     app-navbar
     div.container.mx-auto(class="max-md:mx-2")
       div
-        nuxt-img(src="/images/hero-image.png" class="w-[45vw] p-10 object-cover absolute right-10 max-md:w-full max-md:top-[30vw] max-md:translate-x-[10%]")
+        nuxt-img(src="/images/hero-image.png" class="w-[45vw] p-10 object-cover absolute right-10 top-0 max-md:w-full max-md:top-[30vw] max-md:translate-x-[10%]")
         div(class="flex flex-col justify-center items-start absolute bottom-1/3 max-md:mx-2 max-md:top-[70vh]")
           h1(class="text-5xl font-bold text-fxblue max-md:text-4xl") Servisteki cihazınızın
           h1(class="text-5xl font-bold text-fxblue max-md:text-4xl mt-2") durumunu sorgulayın
