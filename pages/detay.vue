@@ -14,6 +14,7 @@ import {
 import {Checkbox} from "~/components/ui/checkbox";
 import StatusTimeline from "~/components/StatusTimeline.vue";
 import {Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow} from "~/components/ui/table";
+import Brand from "~/components/shared/Brand.vue";
 
 const statuses = [
   {
@@ -94,11 +95,11 @@ const items = [
 
 <template lang="pug">
 main.w-screen.h-screen.bg-fwhite.flex
-  div(class="w-4/12 h-screen bg-fxsoftblue grid place-content-center")
+  div(class="w-4/12 max-lg:hidden h-screen bg-fxsoftblue grid place-content-center")
     nuxt-img(src="/images/detail.png" alt="register")
-  div(class="w-8/12 h-screen p-10 overflow-y-auto")
+  div(class="w-8/12 h-screen p-10 overflow-y-auto max-lg:w-full max-md:px-4 grid place-content-start max-md:place-content-start")
     div(class="flex justify-between")
-      nuxt-img(src="/logo.png" alt="logo" height="30")
+      Brand(variation="normal" )
       Button(variant="outline" class="text-fxblue")
         Icon(name="ic:outline-local-printshop")
         | Yazdır
