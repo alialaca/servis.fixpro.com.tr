@@ -15,30 +15,30 @@ import {Checkbox} from "~/components/ui/checkbox";
 </script>
 
 <template lang="pug">
-main.w-screen.h-screen.bg-fwhite.flex
-  div(class="w-4/12 h-screen bg-fxsoftblue grid place-content-center")
+main.w-screen.min-h-screen.bg-fwhite.flex
+  div(class="w-4/12 max-lg:hidden h-screen bg-fxsoftblue grid place-content-center")
     nuxt-img(src="/images/register.png" alt="register")
-  div(class="w-8/12 h-screen grid place-content-center")
+  div(class="w-8/12 max-lg:w-full max-md:px-4 h-screen grid place-content-center max-md:place-content-start max-md:py-10")
     div(class="flex flex-col gap-2")
       div.text-5xl.text-fxblue.font-bold FixPro
       div.text-2xl Teknik Servis Kaydı Oluştur
       div.font-light Cihazınızla ilgili yaşadığınız sorunu belirtin ve servis kaydınızı oluşturun.
-    Form.mt-16(class="grid grid-cols-2 gap-x-8 gap-y-4 font-light")
+    Form.mt-16(class="grid grid-cols-2 gap-x-8 gap-y-4 font-light" method="post" action="/detay")
       p.mt-3.text-md.font-semibold.underline.col-span-2 Kişisel Bilgiler
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light Cihaz Markası
         Input(id="name" name="name" type="text")
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light Ad Soyad
         Input(id="name" name="name" type="text")
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light TCKN / VKN
         Input(id="name" name="name" type="text")
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light Telefon Numarası
         Input(id="name" name="name" type="text")
       p.mt-3.text-md.font-semibold.underline.col-span-2 Cihaz Bilgileri
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light Cihaz Modeli
         Select
           SelectTrigger
@@ -56,7 +56,7 @@ main.w-screen.h-screen.bg-fwhite.flex
               SelectItem(value="P27" ) P27
               SelectItem(value="P700" ) P700
             SelectItem(value="Diğer" ) Diğer
-      div.form-item
+      div.form-item(class="max-md:col-span-2")
         Label.font-light Seri Numarası
         Input(id="name" name="name" type="text")
       div.form-item.col-span-2
@@ -67,7 +67,7 @@ main.w-screen.h-screen.bg-fwhite.flex
         Label
           span.text-fxblue.font-semibold KVKK aydınlatma metnini
           span.font-light.ml-1 okudum, kabul ediyorum.
-      div.form-item.col-span-2.flex.justify-end.gap-2.pt-8
+      div.form-item.col-span-2.flex.justify-end.gap-2.pt-8(class="max-md:mb-10")
         NuxtLink(to="/" class="border-fxblue border rounded-md px-4 py-1 text-fxblue text-md") İptal
         Button.bg-fxblue.text-white.px-8.py-2.rounded-md Servis Kaydı Oluştur
 
