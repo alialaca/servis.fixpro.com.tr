@@ -40,8 +40,8 @@ const contents = [
 
 <template lang="pug">
   section#sikca-sorulan-sorular(class="w-screen min-h-screen bg-[url('/images/service.png')] bg-cover")
-    div.container.mx-auto.py-40(class="max-md:px-2")
-      Card(class="w-1/2 max-md:w-full ml-auto" )
+    div.container.mx-auto.py-40(class="max-lg:px-2")
+      Card(class="w-1/2 max-lg:w-full ml-auto" )
         CardHeader
           CardTitle(class="text-2xl font-bold") Sıkça Sorulan Sorular
         CardContent
