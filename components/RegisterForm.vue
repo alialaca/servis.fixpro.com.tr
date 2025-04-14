@@ -11,6 +11,10 @@ import {
   SelectValue
 } from "~/components/ui/select";
 import {Checkbox} from "~/components/ui/checkbox";
+import {Dialog, DialogContent, DialogHeader} from "~/components/ui/dialog";
+import KvkkContent from "~/components/KvkkContent.vue";
+
+
 </script>
 
 <template lang="pug">
@@ -56,7 +60,14 @@ import {Checkbox} from "~/components/ui/checkbox";
     div.form-item.flex.flex-items-center.space-x-2.col-span-2
       Checkbox.border-fxblue(class="")
       Label
-        span.text-fxblue.font-semibold KVKK aydınlatma metnini
+        Dialog
+          DialogTrigger(as-child)
+            span.text-fxblue.font-semibold.cursor-pointer KVKK aydınlatma metnini
+          DialogScrollContent
+            DialogHeader.p-6.pb-0
+              DialogTitle KVKK Aydınlatma Metni
+              DialogDescription
+            KvkkContent
         span.font-light.ml-1 okudum, kabul ediyorum.
     div.form-item.col-span-2.flex.justify-end.gap-2.pt-8(class="max-md:mb-10")
       NuxtLink(to="/" class="border-fxblue border rounded-md px-4 py-1 text-fxblue text-md") İptal
