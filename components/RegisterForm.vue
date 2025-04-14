@@ -14,7 +14,15 @@ import {Checkbox} from "~/components/ui/checkbox";
 import {Dialog, DialogContent, DialogHeader} from "~/components/ui/dialog";
 import KvkkContent from "~/components/KvkkContent.vue";
 
-
+const form = reactive({
+  brand: "",
+  name: "",
+  vkn: "",
+  phone: "",
+  deviceModel: "",
+  serialNumber: "",
+  description: ""
+});
 </script>
 
 <template lang="pug">
@@ -22,20 +30,20 @@ import KvkkContent from "~/components/KvkkContent.vue";
     p.mt-3.text-md.font-semibold.underline.col-span-2 Kişisel Bilgiler
     div.form-item(class="max-md:col-span-2")
       Label.font-light Cihaz Markası
-      Input(id="name" name="name" type="text")
+      Input(name="brand" type="text" v-model="form.brand")
     div.form-item(class="max-md:col-span-2")
       Label.font-light Ad Soyad
-      Input(id="name" name="name" type="text")
+      Input(name="name" type="text" v-model="form.name" )
     div.form-item(class="max-md:col-span-2")
       Label.font-light TCKN / VKN
-      Input(id="name" name="name" type="text")
+      Input(name="vkn" type="text" v-model="form.vkn" )
     div.form-item(class="max-md:col-span-2")
       Label.font-light Telefon Numarası
-      Input(id="name" name="name" type="text")
+      Input(name="phone" type="text" v-model="form.phone" )
     p.mt-3.text-md.font-semibold.underline.col-span-2 Cihaz Bilgileri
     div.form-item(class="max-md:col-span-2")
       Label.font-light Cihaz Modeli
-      Select
+      Select(name="deviceModel" v-model="form.deviceModel")
         SelectTrigger
           SelectValue(placeholder="Seçiniz")
         SelectContent
@@ -53,10 +61,10 @@ import KvkkContent from "~/components/KvkkContent.vue";
           SelectItem(value="Diğer" ) Diğer
     div.form-item(class="max-md:col-span-2")
       Label.font-light Seri Numarası
-      Input(id="name" name="name" type="text")
+      Input(name="serialNumber" type="text" v-model="form.serialNumber" )
     div.form-item.col-span-2
       Label.font-light Arıza Açıklaması
-      Textarea(id="name" name="name" type="text")
+      Textarea(name="description" type="text" v-model="form.description" )
     div.form-item.flex.flex-items-center.space-x-2.col-span-2
       Checkbox.border-fxblue(class="")
       Label
