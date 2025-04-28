@@ -13,8 +13,8 @@ defineProps<{
 <template lang="pug">
   div.flex.flex-row.gap-4.pb-3
     div(
-      class="border border-[3px] bg-white z-50 shadow-md border-fxstatusblue rounded-full grid place-content-center size-12 min-w-12 my-2"
-      :class="{'border-white': status.status !== 'completed', 'bg-[#EFEFF0]': status.status === 'pending'}"
+      class="border border-[3px] z-50 shadow-md rounded-full grid place-content-center size-12 min-w-12 my-2"
+      :class="[status.status === 'completed' ? 'border-fxstatusblue' : 'border-white',  status.status === 'pending' ? 'bg-[#EFEFF0]' : 'bg-white']"
     )
       Icon(:name="status.icon" class="text-fxblue size-6")
     div(
