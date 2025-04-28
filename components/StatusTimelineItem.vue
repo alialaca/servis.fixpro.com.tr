@@ -19,8 +19,8 @@ defineProps<{
       Icon(:name="status.icon" class="text-fxblue size-6")
     div(
       v-show="status.title !== 'Teslim edildi'"
-      class="border-[.1rem] border-[#EFEFF0] min-h-8 relative -left-10 top-14"
-      :class="{'border-fxstatusblue': status.status === 'completed', 'border-fxstatusblue': status.status === 'completed'}"
+      class="border-[.1rem]  min-h-8 relative -left-10 top-14"
+      :class="[status.status === 'completed' ? 'border-fxstatusblue' : 'border-[#EFEFF0]']"
     )
     div.text-xs.my-2
       p.text-sm {{ status.title }}
