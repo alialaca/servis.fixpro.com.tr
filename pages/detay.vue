@@ -96,7 +96,7 @@ const items = [
 <template lang="pug">
 main.w-screen.h-screen.bg-fwhite.flex
   div(class="w-4/12 max-lg:hidden h-screen bg-fxsoftblue grid place-content-center")
-    nuxt-img.px-10(src="/images/detail.png" alt="register")
+    img.px-10(src="/images/detail.png" alt="register")
   div(class="w-8/12 h-screen p-10 overflow-y-auto max-lg:w-full max-md:px-4 grid place-content-stretch max-md:place-content-start")
     div(class="flex justify-between")
       Brand(variation="normal" )

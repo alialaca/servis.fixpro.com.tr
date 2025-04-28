@@ -26,7 +26,7 @@ const form = reactive({
 </script>
 
 <template lang="pug">
-  Form.mt-16(class="grid grid-cols-2 gap-x-8 gap-y-4 font-light" method="post" action="/detay")
+  Form.mt-16(@submit="submitForm" class="grid grid-cols-2 gap-x-8 gap-y-4 font-light")
     p.mt-3.text-md.font-semibold.underline.col-span-2 Kişisel Bilgiler
     div.form-item(class="max-md:col-span-2")
       Label.font-light Cihaz Markası
