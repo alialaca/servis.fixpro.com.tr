@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 import AppNavbar from "~/components/shared/AppNavbar.vue";
-import {Input} from "~/components/ui/input";
 import SearchForm from "~/components/sections/SearchForm.vue";
 </script>
 
