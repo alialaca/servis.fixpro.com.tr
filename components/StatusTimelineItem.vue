@@ -7,6 +7,7 @@ defineProps<{
     date: string
     status: string
   }
+  isLast?: boolean
 }>()
 
 const getIconClasses = (status: string) => {
@@ -54,9 +55,8 @@ const getStatusText = (status: string, date: string) => {
     )
       Icon(:name="status.icon" class="text-fxblue size-6")
     div(
-      v-show="status.title !== 'Kargolandı'"
       class="border-[.1rem]  min-h-8 relative -left-10 top-14"
-      :class="getLineClasses(status.status)"
+      :class="isLast ? 'invisible' : getLineClasses(status.status)"
     )
     div.text-xs.my-2
       p.text-sm {{ status.title }}
