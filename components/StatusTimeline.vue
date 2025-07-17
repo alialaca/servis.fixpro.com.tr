@@ -13,7 +13,7 @@ const props = defineProps<{
 </script>
 
 <template lang="pug">
-status-timeline-item(v-for="(status, index) in props.statuses" :key="status.title" :status="status" :isLast="index === props.statuses.length - 1")
+status-timeline-item(v-for="(status, index) in props.statuses" :key="status.title" :status="status" :isLast="index === props.statuses.length - 1" :index="index")
 </template>
 
 <style scoped>
