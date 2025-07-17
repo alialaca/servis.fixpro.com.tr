@@ -31,9 +31,10 @@ const formatDate = (dateStr: string) => {
 const getStatusIcon = (tip: string) => {
   switch (tip) {
     case 'Yeni Kayıt': return 'fe:layer'
-    case 'Teslim Alındı': return 'heroicons:cube'
-    case 'İnceleme': return 'heroicons:wrench-screwdriver'
+    case 'Bakımda': return 'heroicons:wrench-screwdriver'
+    case 'Beklemede': return 'heroicons:clock'
     case 'Hazır': return 'material-symbols:check-circle-outline-rounded'
+    case 'Gönderildi': return 'heroicons:truck'
     default: return 'fe:layer'
   }
 }
