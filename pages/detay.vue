@@ -39,9 +39,10 @@ const getStatusIcon = (tip: string) => {
   }
 }
 
-const getStatusType = (tip: string, index: number, total: number) => {
-  if (index === total - 1) return 'completed'
-  return 'completed'
+const getStatusType = (isCompleted: boolean, isNext: boolean) => {
+  if (isCompleted) return 'completed'  // Tamamlandı: beyaz arkaplan + mavi border
+  if (isNext) return 'in-progress'     // Sıradaki: beyaz arkaplan + bordersız
+  return 'pending'                     // Bekleyen: gri arkaplan + beyaz border
 }
 
 const getUserFriendlyTitle = (statusName: string) => {
@@ -75,27 +76,38 @@ const statuses = computed(() => {
     })
   }
   
+  // Sıradaki adımı bul (ilk tamamlanmamış durum)
+  let nextStepIndex = -1
+  for (let i = 0; i < predefinedStatuses.length; i++) {
+    if (!apiStatuses.has(predefinedStatuses[i])) {
+      nextStepIndex = i
+      break
+    }
+  }
+  
   // Her durum için kontrol et
   return predefinedStatuses.map((statusName, index) => {
     const apiStatus = apiStatuses.get(statusName)
+    const isCompleted = !!apiStatus
+    const isNext = index === nextStepIndex
     
     if (apiStatus) {
-      // API'de bu durum var
+      // API'de bu durum var - tamamlandı
       return {
         icon: getStatusIcon(statusName),
         title: getUserFriendlyTitle(statusName),
         date: formatDate(apiStatus.tarih),
         description: apiStatus.aciklama || '',
-        status: 'completed'
+        status: getStatusType(isCompleted, isNext)
       }
     } else {
-      // API'de bu durum yok - beklemede
+      // API'de bu durum yok - beklemede veya sıradaki
       return {
         icon: getStatusIcon(statusName),
         title: getUserFriendlyTitle(statusName),
         date: '',
-        description: 'Beklemede',
-        status: 'pending'
+        description: isNext ? 'Sırada' : 'Beklemede',
+        status: getStatusType(isCompleted, isNext)
       }
     }
   })
