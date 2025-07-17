@@ -26,8 +26,8 @@ export default defineNuxtConfig({
     },
     nitro: {
         routeRules: {
-            '/api/**': {
-                proxy: process.env.API_SERVICE_URL || 'http://localhost:7254',
+            '/api/detail/**': {
+                proxy: (process.env.API_SERVICE_URL || 'http://localhost:7254') + '/takip/detail/**'
             },
         },
         storage: {
