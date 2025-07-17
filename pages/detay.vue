@@ -45,14 +45,49 @@ const getStatusType = (tip: string, index: number, total: number) => {
 }
 
 const statuses = computed(() => {
-  if (!servisData.value?.durumlar) return []
-  return servisData.value.durumlar.map((durum: any, index: number) => ({
-    icon: getStatusIcon(durum.tip),
-    title: durum.tip,
-    date: formatDate(durum.tarih),
-    description: durum.aciklama || '',
-    status: getStatusType(durum.tip, index, servisData.value.durumlar.length)
-  }))
+  if (!servisData.value) return []
+  
+  // Sabit durum akışı
+  const predefinedStatuses = [
+    'Yeni Kayıt',
+    'Bakımda', 
+    'Beklemede',
+    'Hazır',
+    'Gönderildi'
+  ]
+  
+  // API'den gelen durumları map'e dönüştür
+  const apiStatuses = new Map()
+  if (servisData.value.durumlar) {
+    servisData.value.durumlar.forEach((durum: any) => {
+      apiStatuses.set(durum.tip, durum)
+    })
+  }
+  
+  // Her durum için kontrol et
+  return predefinedStatuses.map((statusName, index) => {
+    const apiStatus = apiStatuses.get(statusName)
+    
+    if (apiStatus) {
+      // API'de bu durum var
+      return {
+        icon: getStatusIcon(statusName),
+        title: statusName,
+        date: formatDate(apiStatus.tarih),
+        description: apiStatus.aciklama || '',
+        status: 'completed'
+      }
+    } else {
+      // API'de bu durum yok - beklemede
+      return {
+        icon: getStatusIcon(statusName),
+        title: statusName,
+        date: '',
+        description: 'Beklemede',
+        status: 'pending'
+      }
+    }
+  })
 })
 
 const items = computed(() => {
