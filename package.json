@@ -15,6 +15,7 @@
     "@nuxt/icon": "1.11.0",
     "@nuxt/image": "1.10.0",
     "@nuxt/scripts": "0.11.2",
+    "@pinia/nuxt": "^0.11.1",
     "@unhead/vue": "^2.0.0-rc.8",
     "@vee-validate/zod": "^4.15.0",
     "@vueuse/core": "^13.0.0",
@@ -24,6 +25,7 @@
     "eslint": "^9.0.0",
     "lucide-vue-next": "^0.483.0",
     "nuxt": "^3.16.0",
+    "pinia": "^3.0.3",
     "reka-ui": "^2.1.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
@@ -35,6 +37,7 @@
   "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2",
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.13.2",
+    "@types/node": "^24.0.10",
     "nuxt-api-shield": "^0.8.0",
     "pug": "^3.0.3",
     "shadcn-nuxt": "^1.0.3"

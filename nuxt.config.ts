@@ -10,7 +10,8 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@nuxt/image',
         '@nuxt/scripts',
-        'nuxt-api-shield'
+        'nuxt-api-shield',
+        '@pinia/nuxt'
     ],
     shadcn: {
         prefix: '',
@@ -24,6 +25,11 @@ export default defineNuxtConfig({
         }
     },
     nitro: {
+        routeRules: {
+            '/api/**': {
+                proxy: process.env.API_SERVICE_URL || 'http://localhost:7254',
+            },
+        },
         storage: {
             shield: {
                 driver: 'memory'
