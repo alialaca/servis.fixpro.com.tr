@@ -3,16 +3,29 @@
 const kod = ref('')
 const loading = ref(false)
 const showError = ref(false)
+const router = useRouter()
+const servisStore = useServisStore()
 
-function check() {
+async function check() {
+  if (!kod.value) return
+  
   loading.value = true
-  // if (kod.value) {
-  //   router.push(`/detay?kod=${kod.value}`)
-  // }
-  setTimeout(() => {
+  showError.value = false
+  
+  try {
+    const data = await $fetch(`/api/detail/${kod.value}`, { method: 'GET' })
+    
+    if (data) {
+      servisStore.setData(kod.value, data)
+      router.push(`/detay?kod=${kod.value}`)
+    } else {
+      showError.value = true
+    }
+  } catch (error) {
+    showError.value = true
+  } finally {
     loading.value = false
-    showError.value = !showError.value
-  }, 3000)
+  }
 }
 
 </script>
