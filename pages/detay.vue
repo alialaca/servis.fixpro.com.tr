@@ -44,10 +44,21 @@ const getStatusType = (tip: string, index: number, total: number) => {
   return 'completed'
 }
 
+const getUserFriendlyTitle = (statusName: string) => {
+  const titleMap = {
+    'Yeni Kayıt': 'Servis Kaydı Oluşturuldu',
+    'Bakımda': 'Teknik İnceleme ve Onarım',
+    'Beklemede': 'Beklemede',
+    'Hazır': 'Ödeme',
+    'Gönderildi': 'Kargolandı'
+  }
+  return titleMap[statusName] || statusName
+}
+
 const statuses = computed(() => {
   if (!servisData.value) return []
   
-  // Sabit durum akışı
+  // Sabit durum akışı (API keys)
   const predefinedStatuses = [
     'Yeni Kayıt',
     'Bakımda', 
@@ -72,7 +83,7 @@ const statuses = computed(() => {
       // API'de bu durum var
       return {
         icon: getStatusIcon(statusName),
-        title: statusName,
+        title: getUserFriendlyTitle(statusName),
         date: formatDate(apiStatus.tarih),
         description: apiStatus.aciklama || '',
         status: 'completed'
@@ -81,7 +92,7 @@ const statuses = computed(() => {
       // API'de bu durum yok - beklemede
       return {
         icon: getStatusIcon(statusName),
-        title: statusName,
+        title: getUserFriendlyTitle(statusName),
         date: '',
         description: 'Beklemede',
         status: 'pending'
