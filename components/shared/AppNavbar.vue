@@ -39,7 +39,7 @@ const menues = [
         div(class="hidden lg:flex lg:gap-x-12 text-gray-900")
           a(v-for="menu in menues" :href="menu.path" v-text="menu.text" class="transition-all duration-300 hover:relative hover:text-fxblue hover:font-bold")
         div(class="hidden lg:flex lg:flex-1 lg:justify-end")
-          NuxtLink(to="/kayit" class="bg-fxblue rounded-sm text-white py-2 px-4") +  Yeni Cihaz Kaydı
+          // NuxtLink(to="/kayit" class="bg-fxblue rounded-sm text-white py-2 px-4") +  Yeni Cihaz Kaydı
 </template>s
 
 <style scoped>

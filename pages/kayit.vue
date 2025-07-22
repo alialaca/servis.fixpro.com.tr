@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// Kayıt sayfasına erişimi engelle
+await navigateTo('/')
 </script>
 
 <template lang="pug">
