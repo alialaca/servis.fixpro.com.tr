@@ -96,3 +96,20 @@ pnpm deploy:hetzner # Deploy to hetzner/fx-servis-takip-ui
 - Scheduled task runs every 15 minutes to clean shield data
 - Templates use Pug syntax for cleaner markup
 - The application uses Turkish language for UI text
+
+## Registration System Status
+
+**CURRENTLY DISABLED** - The registration system is temporarily disabled:
+
+- Registration button in `AppNavbar.vue:42` is commented out
+- Registration page `/kayit` redirects to homepage via `navigateTo('/')`
+- `RegisterForm` component exists but is not accessible
+
+### To Re-enable Registration:
+1. Uncomment the registration button in `components/shared/AppNavbar.vue:42`
+2. Remove the `await navigateTo('/')` redirect from `pages/kayit.vue:3`
+
+### Related Files:
+- `pages/kayit.vue` - Registration page with form
+- `components/RegisterForm.vue` - Registration form component
+- `components/shared/AppNavbar.vue` - Navigation bar with registration button
